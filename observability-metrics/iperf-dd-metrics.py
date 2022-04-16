@@ -47,6 +47,6 @@ received_mbps = int(result.received_Mbps)
 
 # send Metrics to DD and add some tags for classification in DD GUI
 # send bandwidth metric - egress mbps
-statsd.gauge('iperf3.nyhq.mbps.egress', sent_mbps, tags=["team_name:your_team", "team_app:iperf"])
+statsd.gauge('iperf3.test.mbps.egress', sent_mbps, tags=["team_name:your_team", "team_app:iperf"])
 # send bandwidth metric - ingress mbps
-statsd.gauge('iperf3.nyhq.mbps.ingress', received_mbps, tags=["team_name:your_team", "team_app:iperf"])
+statsd.gauge('iperf3.test.mbps.ingress', received_mbps, tags=["team_name:your_team", "team_app:iperf"])
