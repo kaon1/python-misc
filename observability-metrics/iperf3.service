@@ -1,0 +1,14 @@
+# Centos Server file to run iperf3 service on startup.
+# This server acts as the iperf 'receiver' for speed testing.
+# /etc/systemd/system/iperf3.service
+# User service: $HOME/.config/systemd/user/iperf3.service
+
+[Unit]
+Description=iperf3 server
+After=syslog.target network.target auditd.service
+
+[Service]
+ExecStart=/usr/bin/iperf3 -s
+
+[Install]
+WantedBy=multi-user.target
